@@ -7,11 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yourdevpro", "yourdevpro\yo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataInsertScripts", "DataInsertScripts", "{9D95799F-87EE-435A-A02D-093B239F0441}"
 	ProjectSection(SolutionItems) = preProject
-		DataInsertScripts\01-TESTED-CreateDatabaseSchemaAndInsertData-REV03.sql = DataInsertScripts\01-TESTED-CreateDatabaseSchemaAndInsertData-REV03.sql
-		DataInsertScripts\02-CreateSchemaOnly-REV03.sql = DataInsertScripts\02-CreateSchemaOnly-REV03.sql
-		DataInsertScripts\03-DataONLY-REV03.sql = DataInsertScripts\03-DataONLY-REV03.sql
-		DataInsertScripts\04-DropAndCreateSchemaOnly-REV03.sql = DataInsertScripts\04-DropAndCreateSchemaOnly-REV03.sql
-		DataInsertScripts\05-DropCreateAndData-REV03.sql = DataInsertScripts\05-DropCreateAndData-REV03.sql
+		DataInsertScripts\01-TESTED-CreateDatabaseSchemaAndInsertData-REV04.sql = DataInsertScripts\01-TESTED-CreateDatabaseSchemaAndInsertData-REV04.sql
+		DataInsertScripts\02-CreateSchemaOnly-REV04.sql = DataInsertScripts\02-CreateSchemaOnly-REV04.sql
+		DataInsertScripts\03-DataONLY-REV04.sql = DataInsertScripts\03-DataONLY-REV04.sql
+		DataInsertScripts\04-DropAndCreateSchemaOnly-REV04.sql = DataInsertScripts\04-DropAndCreateSchemaOnly-REV04.sql
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeShop.Domain", "BikeShop.Domain\BikeShop.Domain.csproj", "{AA75EEC4-9C26-471E-A941-20888942E28B}"
@@ -20,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NOTES", "NOTES", "{0AAE295E
 	ProjectSection(SolutionItems) = preProject
 		OriginalIdentityView.txt = OriginalIdentityView.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yourdevpro.Rest.v1", "yourdevpro.Rest.v1\yourdevpro.Rest.v1.csproj", "{7C42EE4E-9F44-45C0-8A7C-75C483F6DC01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yourdevpro.Rest.v1.Test", "yourdevpro.Rest.v1.Test\yourdevpro.Rest.v1.Test.csproj", "{0C759DF0-CB0C-4EB8-BFFD-7533F1AFD845}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +38,14 @@ Global
 		{AA75EEC4-9C26-471E-A941-20888942E28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA75EEC4-9C26-471E-A941-20888942E28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA75EEC4-9C26-471E-A941-20888942E28B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C42EE4E-9F44-45C0-8A7C-75C483F6DC01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C42EE4E-9F44-45C0-8A7C-75C483F6DC01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C42EE4E-9F44-45C0-8A7C-75C483F6DC01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C42EE4E-9F44-45C0-8A7C-75C483F6DC01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C759DF0-CB0C-4EB8-BFFD-7533F1AFD845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C759DF0-CB0C-4EB8-BFFD-7533F1AFD845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C759DF0-CB0C-4EB8-BFFD-7533F1AFD845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C759DF0-CB0C-4EB8-BFFD-7533F1AFD845}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

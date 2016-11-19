@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace BikeShop.Domain
 {
-	// Generated 11/22/2014 00:32:30
+	// Generated 10/27/2016 21:38:41
 
 	// Add custom code inside partial class
 
