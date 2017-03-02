@@ -98,8 +98,22 @@ namespace DevProApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = userViewModel.Email, Email = userViewModel.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = userViewModel.Email,
+                    Email = userViewModel.Email,
+                    //added custom properties
+                    FirstName=userViewModel.FirstName,
+                    Lastname=userViewModel.Lastname,
+                    Address= userViewModel.Address,
+                    City=userViewModel.City,
+                    State=userViewModel.State,
+                    Country=userViewModel.Country
+                };
+
+
                 var adminresult = await UserManager.CreateAsync(user, userViewModel.Password);
+             
 
                 //Add User to the selected Roles 
                 if (adminresult.Succeeded)
@@ -145,17 +159,27 @@ namespace DevProApp.Controllers
 
             var userRoles = await UserManager.GetRolesAsync(user.Id);
 
-            return View(new EditUserViewModel()
+            EditUserViewModel editUser = new EditUserViewModel()
             {
                 Id = user.Id,
                 Email = user.Email,
+                // Include the additional custom properties
+                FirstName = user.FirstName,
+                Lastname = user.Lastname,
+                Address = user.Address,
+                City = user.City,
+                State = user.State,
+                Country = user.Country,
+
                 RolesList = RoleManager.Roles.ToList().Select(x => new SelectListItem()
                 {
                     Selected = userRoles.Contains(x.Name),
                     Text = x.Name,
                     Value = x.Name
                 })
-            });
+            };
+
+            return View(editUser);
         }
 
         //
@@ -163,8 +187,9 @@ namespace DevProApp.Controllers
         [Route("Users/Edit/")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Email,Id")] EditUserViewModel editUser, params string[] selectedRole)
-        {
+        public async Task<ActionResult> Edit([Bind(Include = "Email,Id,FirstName,Lastname,Address,City,State,Country")] EditUserViewModel editUser, params string[] selectedRole)
+        { 
+            // Did you remember to update Model Binding Attributes [Bind(Include = "Email,Id")] for custom attributes???
             if (ModelState.IsValid)
             {
                 var user = await UserManager.FindByIdAsync(editUser.Id);
@@ -172,10 +197,17 @@ namespace DevProApp.Controllers
                 {
                     return HttpNotFound();
                 }
-
+                
                 user.UserName = editUser.Email;
                 user.Email = editUser.Email;
-
+                //added custom properties
+                user.FirstName = editUser.FirstName;
+                user.Lastname = editUser.Lastname;
+                user.Address = editUser.Address;
+                user.City = editUser.City;
+                user.State = editUser.State;
+                user.Country = editUser.Country;
+                
                 var userRoles = await UserManager.GetRolesAsync(user.Id);
 
                 selectedRole = selectedRole ?? new string[] { };

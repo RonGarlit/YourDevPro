@@ -119,6 +119,12 @@ namespace DevProApp.Models
             var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
             const string name = "admin@example.com";
             const string password = "Admin@123456";
+            const string cFirstName = "Admin";
+            const string cLastname = "Example";
+            const string cAddress = "123 AdminUser St.";
+            const string cCity = "National Park";
+            const string cState = "NJ";
+            const string cCountry = "USA";
             const string roleName = "Admin";
 
             //Create Role Admin if it does not exist
@@ -132,7 +138,16 @@ namespace DevProApp.Models
             var user = userManager.FindByName(name);
             if (user == null)
             {
-                user = new ApplicationUser { UserName = name, Email = name };
+                user = new ApplicationUser {
+                    UserName = name,
+                    Email = name,
+                    FirstName = cFirstName,
+                    Lastname = cLastname,
+                    Address = cAddress,
+                    City = cCity,
+                    State = cState,
+                    Country = cCountry
+                };
                 var result = userManager.Create(user, password);
                 result = userManager.SetLockoutEnabled(user.Id, false);
             }
@@ -148,6 +163,12 @@ namespace DevProApp.Models
             //pre-load Superuser role
             const string name2 = "superuser@example.com";
             const string password2 = "Superuser@123456";
+            const string FirstName2 = "SuperUser";
+            const string Lastname2 = "Example";
+            const string Address2 = "123 SuperUser St.";
+            const string City2 = "National Park";
+            const string State2 = "NJ";
+            const string Country2 = "USA";
             const string roleName2 = "Superuser";
 
             //Create Role Member if it does not exist
@@ -161,7 +182,16 @@ namespace DevProApp.Models
             var user2 = userManager.FindByName(name2);
             if (user2 == null)
             {
-                user2 = new ApplicationUser { UserName = name2, Email = name2 };
+                user2 = new ApplicationUser {
+                    UserName = name2,
+                    Email = name2,
+                    FirstName = FirstName2,
+                    Lastname = Lastname2,
+                    Address = Address2,
+                    City = City2,
+                    State = State2,
+                    Country = Country2
+                };
                 var result = userManager.Create(user2, password2);
                 result = userManager.SetLockoutEnabled(user2.Id, false);
             }
@@ -176,6 +206,12 @@ namespace DevProApp.Models
             //pre-load User role
             const string name3 = "user@example.com";
             const string password3 = "User@123456";
+            const string FirstName3 = "User";
+            const string Lastname3 = "Example";
+            const string Address3 = "123 User St.";
+            const string City3 = "National Park";
+            const string State3 = "NJ";
+            const string Country3 = "USA";
             const string roleName3 = "User";
 
             //Create Role Member if it does not exist
@@ -189,7 +225,16 @@ namespace DevProApp.Models
             var user3 = userManager.FindByName(name3);
             if (user3 == null)
             {
-                user3 = new ApplicationUser { UserName = name3, Email = name3 };
+                user3 = new ApplicationUser {
+                    UserName = name3,
+                    Email = name3,
+                    FirstName = FirstName3,
+                    Lastname = Lastname3,
+                    Address = Address3,
+                    City = City3,
+                    State = State3,
+                    Country = Country3
+                };
                 var result = userManager.Create(user3, password3);
                 result = userManager.SetLockoutEnabled(user3.Id, false);
             }
