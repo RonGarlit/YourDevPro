@@ -227,6 +227,21 @@
     <Content Include="Areas\Home\Views\web.config" />
     <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Product\Views\web.config" />
+    <Content Include="Areas\Product\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Product\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Product\Views\Product\OldtestIndex.cshtml" />
+    <Content Include="Areas\Product\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Product\Views\Product\_ProductTable.cshtml" />
+    <Content Include="Areas\Product\Views\Product\Edit01.cshtml" />
+    <Content Include="Areas\Product\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Product\Views\Product\Details.cshtml" />
+    <Content Include="Areas\Product\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Product\Views\Product\Delete.cshtml" />
+    <None Include="Properties\PublishProfiles\YourDevPro - FTP -AZURE.pubxml" />
+    <None Include="Properties\PublishProfiles\YourDevPro - Web Deploy -AZURE.pubxml" />
+    <None Include="Properties\PublishProfiles\yourdevpro.com - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\yourdevpro.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\AdvenBikeShopTitle.gif" />
     <Content Include="Images\AdvenBikeShopTitleTransp.gif" />
@@ -500,6 +515,9 @@
     <Compile Include="Areas\Administration\Controllers\ManageController.cs" />
     <Compile Include="Areas\Administration\Controllers\RolesAdminController.cs" />
     <Compile Include="Areas\Administration\Controllers\UserAdminController.cs" />
+    <Compile Include="Areas\Product\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Product\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\Product\ProductAreaRegistration.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -528,13 +546,16 @@
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Home\Views\Shared\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="Code\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BikeShop.Domain\BikeShop.Domain.csproj">
       <Project>{AA75EEC4-9C26-471E-A941-20888942E28B}</Project>
       <Name>BikeShop.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DevPro.Pagination\DevPro.Pagination.csproj">
+      <Project>{6f57e592-0b97-4028-8125-ade81eafe47c}</Project>
+      <Name>DevPro.Pagination</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

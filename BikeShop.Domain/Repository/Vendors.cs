@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace BikeShop.Domain
 {
-	// Generated 10/27/2016 21:38:41
+	// Generated 03/21/2017 23:54:05
 
 	// Add custom code inside partial class
 

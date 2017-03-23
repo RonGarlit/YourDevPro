@@ -9,7 +9,7 @@ using System.Configuration;
 
 namespace BikeShop.Domain
 {
-	// Generated 11/22/2014 00:32:30
+	// Generated 03/21/2017 23:54:05
 
 	// Add custom code inside partial class
 

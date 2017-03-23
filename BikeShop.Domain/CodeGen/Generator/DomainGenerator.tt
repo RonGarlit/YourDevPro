@@ -35,7 +35,7 @@
 // # domainNamespace:    Namespace of current project. Examples: Art.Domain, Emp.Domain, Car.Domain, etc.
 // # appName:            Short identifier of application. Examples: Art, Emp, Car, Plan, Doc, etc.
 // #
-string connectionString = @"Data Source=T420-WIN10\SQL2016DEV;Initial Catalog=DevProBikeShopDB;Integrated Security=SSPI"; 
+string connectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=DevProBikeShopDB;Integrated Security=SSPI"; 
 string domainNamespace = "BikeShop.Domain";
 string appName = "BikeShop";
 // # 

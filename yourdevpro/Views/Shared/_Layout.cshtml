@@ -23,6 +23,10 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "Home" }, null)</li>
                     <li>@Html.ActionLink("Shop", "UnderConstruction", "Home", new { area = "Home" }, null)</li>
+                    @if (Request.IsAuthenticated && (User.IsInRole("User") || User.IsInRole("Superuser") || User.IsInRole("Admin")))
+                    {
+                        <li>@Html.ActionLink("Product", "Index", "Product", new { area = "Product" }, null)</li>
+                    }
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "Home" }, null)</li>
                     <li>@Html.ActionLink("About", "About", "Home", new { area = "Home" }, null)</li>
 

@@ -1,6 +1,7 @@
 ﻿using BikeShop.Domain;
 using System.Linq;
 using System.Web.Mvc;
+using WebGrease.Css.ImageAssemblyAnalysis;
 
 namespace DevProApp.Controllers
 {
@@ -13,57 +14,58 @@ namespace DevProApp.Controllers
         [Route("Index")]
         public ActionResult Index()
         {
-            // Get some data from the database using domain objects
-            //int usercount = BikeShopContext.Users.Count();
-            int productcount = BikeShopContext.Products.Count();
-            int vendercount = BikeShopContext.Vendors.Count();
-            int partscategorycount = BikeShopContext.Products.Count(where: "CategoryName = @0", parms: "Parts");
-            var productcategorycount = BikeShopContext.Categories.Count();
-            var productcategorylist = BikeShopContext.Categories.All();
+            //// Get some data from the database using domain objects
+            ////int usercount = BikeShopContext.Users.Count();
+            //int productcount = BikeShopContext.Products.Count();
+            //int vendercount = BikeShopContext.Vendors.Count();
+            //int partscategorycount = BikeShopContext.Products.Count(where: "CategoryName = @0", parms: "Parts");
+            //var productcategorycount = BikeShopContext.Categories.Count();
+            //var productcategorylist = BikeShopContext.Categories.All();
 
-            //var something = BikeShopContext.Errors.All();
+            ////var something = BikeShopContext.Errors.All();
 
-            string sqlquery = @"SELECT distinct CategoryId, CategoryName FROM [Product]";
-            var categorylist = BikeShopContext.Products.Query(sqlquery).Select(c => new { c.CategoryId, c.CategoryName }).ToList();
+            //string sqlquery = @"SELECT distinct CategoryId, CategoryName FROM [Product]";
+            //var categorylist = BikeShopContext.Products.Query(sqlquery).Select(c => new { c.CategoryId, c.CategoryName }).ToList();
 
-            var categorydictionary = categorylist.ToDictionary(c => new { c.CategoryId, c.CategoryName });
+            //var categorydictionary = categorylist.ToDictionary(c => new { c.CategoryId, c.CategoryName });
 
-            // Put in USER SYNC code here
-            // Part of kludging in the new ASP.NET Identity stuff for now
-            //if (Thread.CurrentPrincipal.Identity.IsAuthenticated && Thread.CurrentPrincipal.Identity.Name != "")
-            //{
-            //    var UsersList = BikeShopContext.Users.Single(where: "email=@0", parms: Thread.CurrentPrincipal.Identity.Name);
+            //// Put in USER SYNC code here
+            //// Part of kludging in the new ASP.NET Identity stuff for now
+            ////if (Thread.CurrentPrincipal.Identity.IsAuthenticated && Thread.CurrentPrincipal.Identity.Name != "")
+            ////{
+            ////    var UsersList = BikeShopContext.Users.Single(where: "email=@0", parms: Thread.CurrentPrincipal.Identity.Name);
 
-            //    if (UsersList != null)
-            //    {
-            //        UserSync.AspNetUserId = UsersList.AspNetUserId;
-            //        UserSync.Email = UsersList.Email;
-            //        UserSync.Id = UsersList.Id;
-            //        UserSync.FirstName = UsersList.FirstName;
-            //        UserSync.LastName = UsersList.LastName;
-            //        UserSync.City = UsersList.City;
-            //        UserSync.Country = UsersList.Country;
-            //        UserSync.HasUserSyncd = true;
-            //    }
-            //    else
-            //    {
-            //        UserSync.HasUserSyncd = false;
-            //    }
-            //}
+            ////    if (UsersList != null)
+            ////    {
+            ////        UserSync.AspNetUserId = UsersList.AspNetUserId;
+            ////        UserSync.Email = UsersList.Email;
+            ////        UserSync.Id = UsersList.Id;
+            ////        UserSync.FirstName = UsersList.FirstName;
+            ////        UserSync.LastName = UsersList.LastName;
+            ////        UserSync.City = UsersList.City;
+            ////        UserSync.Country = UsersList.Country;
+            ////        UserSync.HasUserSyncd = true;
+            ////    }
+            ////    else
+            ////    {
+            ////        UserSync.HasUserSyncd = false;
+            ////    }
+            ////}
 
-            //ViewBag.UserCount = usercount;
-            ViewBag.ProductCount = productcount;
-            ViewBag.VenderCount = vendercount;
-            ViewBag.NumberOfParts = partscategorycount;
-            ViewBag.CategoryListing = categorylist;
-            ViewBag.CatArrayList = categorylist.ToArray();
-            ViewBag.CatListCount = categorylist.Count();
+            ////ViewBag.UserCount = usercount;
+            //ViewBag.ProductCount = productcount;
+            //ViewBag.VenderCount = vendercount;
+            //ViewBag.NumberOfParts = partscategorycount;
+            //ViewBag.CategoryListing = categorylist;
+            //ViewBag.CatArrayList = categorylist.ToArray();
+            //ViewBag.CatListCount = categorylist.Count();
 
 
-            ViewBag.Name = User.Identity.Name;
-            ViewBag.UserId = User.Identity.Name;
-            //ViewBag.UserIsAdmin = User.IsInRole("Admin");
-            //ViewBag.UserIsMember = User.IsInRole("Member");
+            //ViewBag.Name = User.Identity.Name;
+            //ViewBag.UserId = User.Identity.Name;
+            ////ViewBag.UserIsAdmin = User.IsInRole("Admin");
+            ////ViewBag.UserIsMember = User.IsInRole("Member");
+            
             return View();
         }
 
