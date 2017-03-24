@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataInsertScripts", "DataIn
 		DataInsertScripts\02-CreateSchemaOnly-REV04.sql = DataInsertScripts\02-CreateSchemaOnly-REV04.sql
 		DataInsertScripts\03-DataONLY-REV04.sql = DataInsertScripts\03-DataONLY-REV04.sql
 		DataInsertScripts\04-DropAndCreateSchemaOnly-REV04.sql = DataInsertScripts\04-DropAndCreateSchemaOnly-REV04.sql
+		..\..\Users\ronga\Documents\SQL Server Management Studio\DevProDb-AzureScript-REV01.sql = ..\..\Users\ronga\Documents\SQL Server Management Studio\DevProDb-AzureScript-REV01.sql
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeShop.Domain", "BikeShop.Domain\BikeShop.Domain.csproj", "{AA75EEC4-9C26-471E-A941-20888942E28B}"
