@@ -238,6 +238,10 @@
     <Content Include="Areas\Product\Views\Product\Details.cshtml" />
     <Content Include="Areas\Product\Views\Product\Create.cshtml" />
     <Content Include="Areas\Product\Views\Product\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\Errors\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Errors\_ErrorTable.cshtml" />
+    <Content Include="Areas\Administration\Views\Errors\Details.cshtml" />
+    <Content Include="Areas\Administration\Views\Errors\Delete.cshtml" />
     <None Include="Properties\PublishProfiles\YourDevPro - FTP -AZURE.pubxml" />
     <None Include="Properties\PublishProfiles\YourDevPro - Web Deploy -AZURE.pubxml" />
     <None Include="Properties\PublishProfiles\yourdevpro.com - FTP.pubxml" />
@@ -510,6 +514,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ErrorsController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageController.cs" />

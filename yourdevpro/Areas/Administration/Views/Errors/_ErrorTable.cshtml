@@ -1,50 +1,69 @@
 ﻿@using DevPro.Pagination.PagedList.Mvc
-@model DevPro.Pagination.PagedList.PagedList<BikeShop.Domain.Product>
+@model DevPro.Pagination.PagedList.PagedList<BikeShop.Domain.Error>
 <div>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table table-hover table-condensed table-striped">
+    @*<hr />*@
+    <table class="table table-bordered table-condensed table-striped">
         <thead>
-            <tr>
-                <th>@Html.DisplayName("Name")</th>
-                <th>@Html.DisplayName("Product Number")</th>
-                <th>@Html.DisplayName("Category")</th>
-                <th>@Html.DisplayName("List price")</th>
-                <th>@Html.DisplayName("Action")</th>
-            </tr>
+        <tr>
+            @*<th>@Html.DisplayName("Id")</th>*@
+            <th>@Html.DisplayName("UserId")</th>
+            <th>@Html.DisplayName("ErrorDate")</th>
+            <th>@Html.DisplayName("IpAddress")</th>
+            <th>@Html.DisplayName("UserAgent")</th>
+            <th>@Html.DisplayName("Exception")</th>
+            <th>@Html.DisplayName("Message")</th>
+            @*<th>@Html.DisplayName("Everything")</th>*@
+            <th>@Html.DisplayName("HttpReferer")</th>
+            <th>@Html.DisplayName("PathAndQuery")</th>
+            <th>@Html.DisplayName("Actin")</th>
+        </tr>
         </thead>
         @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
         <p class="bg-primary">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)</p>
 
         @*<p class="bg-primary">List of @Model.TotalItemCount Products (Page Size: @Model.PageSize, Current Page: @Model.PageNumber)</p>*@
         <tbody>
-            @foreach (var product in Model)
+            @foreach (var item in Model)
             {
                 <tr>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>*@
                     <td>
-                        @product.Name;
+                        @Html.DisplayFor(modelItem => item.UserId)
                     </td>
                     <td>
-                        @product.ProductNumber;
+                        @Html.DisplayFor(modelItem => item.ErrorDate)
                     </td>
                     <td>
-                        @product.CategoryName;
+                        @Html.DisplayFor(modelItem => item.IpAddress)
                     </td>
                     <td>
-                        @product.ListPrice;
+                        @Html.DisplayFor(modelItem => item.UserAgent)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = product.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = product.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = product.Id })
+                        @Html.DisplayFor(modelItem => item.Exception)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Message)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.Everything)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HttpReferer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PathAndQuery)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                     </td>
                 </tr>
             }
         </tbody>
-
     </table>
-
 
     <p class="bg-primary">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)</p>
     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
