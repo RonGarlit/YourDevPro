@@ -55,11 +55,6 @@
     <Compile Include="CodeGen\EntityExtensions.cs" />
     <Compile Include="CodeGen\Vendor.cs" />
     <Compile Include="CodeGen\Error.cs" />
-    <Compile Include="CodeGen\Generator\DomainGenerator.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DomainGenerator.tt</DependentUpon>
-    </Compile>
     <Compile Include="CodeGen\Order.cs" />
     <Compile Include="CodeGen\OrderDetail.cs" />
     <Compile Include="CodeGen\OrderNumber.cs" />
@@ -104,10 +99,7 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CodeGen\Generator\DomainGenerator.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DomainGenerator.cs</LastGenOutput>
-    </None>
+    <Content Include="CodeGen\Generator\Removed T4 Code for Micro-ORM.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
