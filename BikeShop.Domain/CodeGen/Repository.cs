@@ -7,6 +7,75 @@ using System.Collections.Generic;
 
 namespace BikeShop.Domain
 {
+    public partial class Repository<T> where T : Entity<T>, new()
+    {
+        static T t = new T();
+
+        public virtual T Single(int? id)
+        {
+            return t.Single(id);
+        }
+        public virtual T Single(string where = null, params object[] parms)
+        {
+            return t.Single(where, parms);
+        }
+        public virtual IEnumerable<T> All(string ids)
+        {
+            return t.All(ids);
+        }
+        public virtual IEnumerable<T> All(string where = null, string orderBy = null, int top = 0, params object[] parms)
+        {
+            return t.All(where, orderBy, top, parms);
+        }
+        public virtual IEnumerable<T> Paged(out int totalRows, string where = null, string orderBy = null, int page = 0, int pageSize = 20, params object[] parms)
+        {
+            return t.Paged(out totalRows, where, orderBy, page, pageSize, parms);
+        }
+
+        public virtual void Insert(T t)
+        {
+            t.Insert();
+        }
+        public virtual void Update(T t)
+        {
+            t.Update();
+        }
+        public virtual void Delete(T t)
+        {
+            t.Delete();
+        }
+
+        public virtual object Scalar(string operation, string column, string where = null, params object[] parms)
+        {
+            return t.Scalar(operation, column, where, parms);
+        }
+        public virtual int Count(string where = null, params object[] parms)
+        {
+            return t.Count(where, parms);
+        }
+        public virtual object Max(string column = null, string where = null, params object[] parms)
+        {
+            return t.Max(column, where, parms);
+        }
+        public virtual object Min(string column = null, string where = null, params object[] parms)
+        {
+            return t.Min(column, where, parms);
+        }
+        public virtual object Sum(string column, string where = null, params object[] parms)
+        {
+            return t.Sum(column, where, parms);
+        }
+
+        public virtual IEnumerable<T> Query(string sql, params object[] parms)
+        {
+            return t.Query(sql, parms);
+        }
+        public virtual void Execute(string sql, params object[] parms)
+        {
+            t.Execute(sql, parms);
+        }
+    }
+
     // ############################################################################
     // #
     // #        ---==>  T H I S  F I L E  W A S  G E N E R A T E D  <==---

@@ -43,16 +43,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeGen\Core.cs" />
+    <Compile Include="CodeGen\Cart.cs" />
+    <Compile Include="CodeGen\CartItem.cs" />
+    <Compile Include="CodeGen\Category.cs" />
+    <Compile Include="CodeGen\UnitOfWorkDistributed.cs" />
     <Compile Include="CodeGen\Data.cs" />
-    <Compile Include="CodeGen\Domain.cs" />
+    <Compile Include="CodeGen\Db.cs" />
+    <Compile Include="CodeGen\DbException.cs" />
+    <Compile Include="CodeGen\DbExtentions.cs" />
+    <Compile Include="CodeGen\Entity.cs" />
+    <Compile Include="CodeGen\EntityExtensions.cs" />
+    <Compile Include="CodeGen\Vendor.cs" />
+    <Compile Include="CodeGen\Error.cs" />
     <Compile Include="CodeGen\Generator\DomainGenerator.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DomainGenerator.tt</DependentUpon>
     </Compile>
+    <Compile Include="CodeGen\Order.cs" />
+    <Compile Include="CodeGen\OrderDetail.cs" />
+    <Compile Include="CodeGen\OrderNumber.cs" />
+    <Compile Include="CodeGen\Product.cs" />
+    <Compile Include="CodeGen\Rating.cs" />
     <Compile Include="CodeGen\Repository.cs" />
     <Compile Include="CodeGen\UnitOfWork.cs" />
+    <Compile Include="CodeGen\User.cs" />
     <Compile Include="Data\BikeShopData.cs" />
     <Compile Include="Data\Data.partial.cs" />
     <Compile Include="Domain\Cart.cs" />
